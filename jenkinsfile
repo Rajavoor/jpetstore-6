@@ -6,15 +6,15 @@ environment {
    
     ArtifactID = readMavenPom().getArtifactId()
     VERSION = readMavenPom().getVersion()
-	scannerHome ="C:/Users/smante/Documents/sonar-scanner/sonar-scanner-4.7.0.2747-windows/bin"
+	scannerHome ="C:\Users\rmsec\Documents\sonar-scanner-4.7.0.2747-windows\bin"
 	NEXUS_VERSION = "nexus3"
     NEXUS_PROTOCOL = "http"
     NEXUS_URL = "localhost:8081"
-    NEXUS_REPOSITORY = "maven-nexus-repo"
-    NEXUS_CREDENTIAL_ID = "Nexus"
+    NEXUS_REPOSITORY = "jpetstore"
+    NEXUS_CREDENTIAL_ID = "12345"
     }
 	tools{
-	maven 'Maven 3.8.5'
+	maven 'Maven'
 	}
 stages {
         
@@ -25,7 +25,7 @@ stages {
             }
 
         }	
- /* stage('Build') {
+  stage('Build') {
             steps {
 			   
                bat 'mvn clean package'
@@ -35,7 +35,7 @@ stages {
   
 			steps {
 				withSonarQubeEnv('Sonarqube-8.9.8') {
-				bat '''C:/Users/smante/Documents/sonar-scanner/sonar-scanner-4.7.0.2747-windows/bin/sonar-scanner \
+				bat '''C:\Users\rmsec\Documents\sonar-scanner-4.7.0.2747-windows\bin \
 			    -Dsonar.java.binaries=src/main/java/ \
 				-Dsonar.projectName=jpetstore-6 \
 			    -Dsonar.projectKey=jpetstore-6 \
@@ -43,7 +43,7 @@ stages {
     }
 	
 	} 
-}*/
+}
 stage("Publish to Nexus Repository Manager") {
             steps {
                 script {
