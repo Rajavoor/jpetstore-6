@@ -6,7 +6,6 @@ environment {
    
     ArtifactID = readMavenPom().getArtifactId()
     VERSION = readMavenPom().getVersion()
-	scannerHome ="C:\Users\rmsec\Documents\sonar-scanner-4.7.0.2747-windows\bin"
 	NEXUS_VERSION = "nexus3"
     NEXUS_PROTOCOL = "http"
     NEXUS_URL = "localhost:8081"
